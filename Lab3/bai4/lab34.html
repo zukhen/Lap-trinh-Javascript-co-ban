@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="https://i.chungta.vn/2017/12/22/LogoFPT-2017-copy-3042-1513928399.jpg"
+        type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính cá nhân</title>
+    <title>Document</title>
+   <link rel="stylesheet" href="./Lab34.css">
+    <script src="Lab34.js"></script>
+
+
+</head>
+
+<body>
+    <h2 style="text-align: center;line-height: 3px;">MÁY TÍNH</h2>
+    <div class="box">
+        <p style="float: left; font-size: 20px; font-weight: bold;"><span id="so1"></span><span
+                id="pheptinh"></span><span id="so2"></span></p>
+        <p style="float: right;   font-size: 20px; font-weight: bold;" ><span id="ketqua"></span></p>
+    </div>
+    <table class="container">
+        <tr>
+            <td><button onclick="ganso(7)">7</button></td>
+            <td><button onclick="ganso(8)">8</button></td>
+            <td><button onclick="ganso(9)">9</button></td>
+            <td><button onclick="ganpheptinh('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(4)">4</button></td>
+            <td><button onclick="ganso(5)">5</button></td>
+            <td><button onclick="ganso(6)">6</button></td>
+            <td><button onclick="ganpheptinh('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(1)">1</button></td>
+            <td><button onclick="ganso(2)">2</button></td>
+            <td><button onclick="ganso(3)">3</button></td>
+            <td><button onclick="ganpheptinh('x')">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="ganso(0)">0</button></td>
+            <td><button onclick="lam_lai()">C</button></td>
+            <td><button onclick="thuc_hien()">=</button></td>
+            <td><button onclick="ganpheptinh(':')">:</button></td>
+        </tr>
+
+    </table>
+</body>
+
+</html>

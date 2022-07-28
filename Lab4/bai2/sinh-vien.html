@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="https://i.chungta.vn/2017/12/22/LogoFPT-2017-copy-3042-1513928399.jpg"
+        type="image/x-icon">
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let sv = new Object;
+    sv.hoTen = prompt("Họ và tên");
+    sv.diem = Number(prompt("Nhập điểm "));
+    sv.hienThi = function(){
+        if (this.diem >=5 ) {
+            this.hocLuc = "Đậu";
+        } else {
+            this.hocLuc = "Trượt";
+            
+        }
+        document.write("<h3>Họ và tên: "+this.hoTen+"</h3>");
+        document.write("<h3>điểm: "+this.diem+"</h3>");
+        document.write("<h3>học lực: "+this.hocLuc+"</h3>");
+    }
+</script>
+<body>
+    <button onmouseover="sv.hienThi()">Hiển thị</button>
+
+</body>
+</html>

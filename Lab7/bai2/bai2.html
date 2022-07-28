@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        #block{
+            background-color: purple;
+            width: 100px;
+            height: 100px;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="toTheRight()">Go right</button>
+    <div id="block"></div>
+
+</body>
+<script>
+    let a = document.getElementById("myDiv").style.maxWidth = "1200px";
+    function toTheRight() {
+        let b = document.getElementById("block")
+        let x = 0;
+        setInterval(function () {
+            if (x == 600) {
+                clearInterval()
+            } else {
+                x++;
+                b.style.left = x + "px"
+                b.style.position="absolute"
+            }
+        }, 2)
+    }
+
+</script>
+
+</html>

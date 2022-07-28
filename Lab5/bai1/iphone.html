@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="https://i.chungta.vn/2017/12/22/LogoFPT-2017-copy-3042-1513928399.jpg"
+    type="image/x-icon"><meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muabaniphone</title>
+</head>
+<style>
+    #box {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        border: 4px solid aqua;
+        border-radius: 6px;
+    }
+
+    img {
+        padding-left: 105px;
+        width: 250px;
+        height: 250px;
+        transform: scale(1);
+        transition: all 0.5s;
+    }
+
+     img:hover {
+         width: 300px;
+        padding-right: 100px;
+         height: 300px;
+        padding-top: 20px;
+        transform: scale(1.1);
+        
+    } 
+
+    #pro {
+        font-weight: bold;
+        padding-left: 200px
+    }
+
+    input {
+        position: relative;
+        left: 130px;
+    }
+
+    button {
+        border-radius: 5px;
+        position: relative;
+        left: 130px;
+        background-color: aquamarine;
+    }
+
+    #qty {
+        background-color: rgb(255, 255, 255);
+        border: 1px solid;
+    }
+
+    button:hover {
+        z-index: 0;
+        color: blue;
+        box-shadow: 0px 5px 10px pink;
+    }
+</style>
+<script>
+    function display() {
+        //lấy các thông tin của sản phẩm theo id của label
+        let pro = document.getElementById("pro")
+        //dựa vào sản phẩm lấy tên  sản phẩm ghi trong phần text của thẻ
+        let qty = document.getElementById("qty");
+        let name = pro.innerText;
+        // lấy giá sản phẩm là giá trị của thuộc tính data-prince
+        let prince = pro.getAttribute("data-prince");
+        //lấy số lượng sản phẩm trong ô số lượng
+        document.getElementById("name").innerText = name;
+        let quantity = qty.value;
+        let amount = prince * quantity;
+        document.getElementById("amount").innerText = amount;
+    }
+</script>
+
+<body>
+    <div id="box">.
+        <label id="pro" data-prince="1950">Iphone 13</label>
+        <br>
+        <img src="https://img.websosanh.vn/v2/users/review/images/g0uimocg53p63.jpg?compress=85" id="image" alt="">
+        <input type="number" placeholder="số lượng bạn muốn mua"  min="0" value="0" id="qty">
+        <button onclick="display()">OK</button>
+        <hr>
+        <h3>Name: <span id="name">?</span></h3>
+        <h3>Amount: <span id="amount">?</span></h3>
+    </div>
+</body>
+
+</html>

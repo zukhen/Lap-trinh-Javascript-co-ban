@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //khai báo mảng chứa ảnh
+        let images = [];
+        //duyệt ảnh
+        //nên đặt ảnh theo thứ tự từ 0 đến hết để dễ duyệt ảnh
+        for (let i = 0; i < 6; i++) {
+            images[i] = new Image();
+            // lấy đường dẫn từng ảnh
+            images[i].src = "Anh/" + i + ".JPG";
+            //Anh/1.jpg
+            //anh/2.jpg
+
+        }
+        //lấy vị trị hình ảnh đang được hiển thị
+        let index = 0;
+        //hàm hiển thị ảnh đầu tiêns
+        function first() {
+            //vị trí ảnh đẩu tiên
+            index = 0;
+            let anh = document.getElementById("anh");
+            anh.src = images[index].src;
+        }
+        function last() {
+            index = images.length - 1;
+            let anh = document.getElementById("anh");
+            anh.src = image[index].src;
+        }
+        function next() {
+            index++;
+            if (index >= images.length) {
+                index = 0;
+            }
+            let anh = document.getElementById("anh");
+            anh.src = images[index].src
+        }
+        function prev() {
+            index--;
+            if (index < 0) {
+                index = images.length - 1;
+            }
+            let anh = document.getElementById("anh");
+            anh.src = images[index].src;
+        }
+    </script>
+    <style>
+        #main {
+            margin: 0 auto;
+            height: 300px;
+            width: 500px;
+        }
+
+        img {
+            padding-left: 70px;
+
+        }
+
+        #button {
+            padding-left: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <img src="Anh/0.JPG" alt="" id="anh">
+        <hr>
+        <div id="button">
+            <button onclick="first()">First</button>
+            <button onclick="prev()">Prev</button>
+            <button onclick="next()">Next</button>
+            <button onclick="last()">Last</button>
+        </div>
+    </div>
+</body>
+
+</html>

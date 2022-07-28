@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Đặt hàng</td>
+        </tr>
+        <tr>
+            <td>Sản phẩm</td>
+            <td><input type="text" name="" id="sanpham"></td>
+        </tr>
+        <tr>
+            <td>Loại</td>
+            <td><select name="-1" id="loai" >
+                    <option value="1"onchange="gia()">A</option>
+                    <option value="2"onchange="gia()">AA</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>Đơn giá</td>
+            <td><input type="number" name="" value="0" readonly id="gia"></td>
+        </tr>
+        <tr>
+            <td>Nơi nhận hàng</td>
+            <td>
+                <input type="radio" name="position" id="dia_chi">Nội thành
+                <input type="radio" name="position" id="dia_chi">Ngoại thành
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                phí vận chuyển
+            </td>
+            <td><input type="number" name="" readonly  id="phi_vc"></td>
+        </tr>
+       
+    </table>
+    <hr>
+    <button id="datmua" onclick="kiem_tra()">Đặt mua</button>
+</body>
+<script>
+    function kiem_tra() {
+        let sp = document.getElementById("sanpham")
+        let gia = document.getElementById("gia")
+        let loai = document.getElementById("loai")
+        let radios = document.getElementById("dia_chi")
+        if (sp.value.length == 0) {
+            alert("Vui lòng nhập tên sản phẩm!")
+            return false
+        }
+        if (isNaN(gia.value)) {
+            alert("Vui lòng nhập số")
+            return false
+        }
+        else {
+            if (parseFloat(gia) <= 0) {
+                alert("Vui lòng nhập số dương")
+                return false
+            }
+        }
+        if (loai.value.length == 0) {
+            alert("Vui lòng chọn sản phẩm")
+            return false
+        }
+       
+        if (!radios[0].checked && !radios[1].checked) {
+            alert("Vui lòng chọn nơi nhận hàng")
+            return false
+        }
+        alert("Chuc mung ban da nhap dung")
+        return true
+        location.reload();
+    }
+    function hien_thi(visible) {
+        let phi_vc = document.getElementById
+
+    }
+   
+</script>
+
+</html>

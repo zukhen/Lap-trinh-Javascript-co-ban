@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .toantrang {
+            height: 600px;
+            width: 500px;
+
+            margin-left: 20px;
+        }
+
+        .chu {
+            width: 30%;
+            height: 100%;
+
+            float: left;
+
+        }
+
+        .form {
+            height: 100%;
+            width: 70%;
+            float: left;
+
+            padding-top: 10px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="toantrang ">
+        <div class="chu">
+            <p>Họ</p><br>
+
+            <p>Tên</p> <br>
+            <p>Ngày sinh</p>
+            <br>
+            <p> Giới tính</p><br>
+            <p> Sos điện thoại</p>
+            <p> Sở thích</p>
+
+        </div>
+        <div class="form">
+            <form onsubmit="kiemtra()">
+                <input id="ho" type="text">
+
+                <br><br><br><br>
+
+                <input id="ten" type="text"><br><br><br><br>
+
+
+                ngày<input id="ngay" type="number" style="width: 30px; " min="0" max="31"> tháng <input id="thang"
+                    min="1" max="12" onchange="ngaytrongthang()" type="number" style="width: 30px;"> năm
+                <input id="nam" type="number" style="width: 40px;" min="1950" max="2020"><br><br><br>
+
+
+                <input type="radio" value="nam" name="gt">nam
+
+                <input type="radio" value="nu" name="gt">nữ
+                <br><br><br><br>
+                <input id="dt" type="number">
+                <br><br>
+
+                <input type="checkbox" value="dabong" name="st"> đá bóng
+                <input type="checkbox" name="st" value="choigame"> chơi game <br>
+                <input type="checkbox" name="st" value="nghenhac"> nghe nhạc
+                <input type="checkbox" name="st" value="nhayday"> nhảy dây <br>
+                khác: <br>
+                <input type="radio" onclick="hienthi(true)" name="khac"> có <input type="radio" onclick="hienthi(false)"
+                    name="khac" checked> không
+                <div style="visibility: hidden;" id="khac">
+                    <p>Mời nhập sở thích:</p>
+                    <input type="text">
+                </div>
+                <button type="submit">Đăng kí</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function hienthi(a) {
+            var khac = document.getElementById('khac')
+            if (a) {
+                khac.style.visibility = 'visible'
+
+
+            } else {
+
+                khac.style.visibility = 'hidden'
+            }
+
+
+        }
+
+
+        function kiemtra() {
+            var ho = document.getElementById('ho')
+            if (ho.value == null || ho.value == '' || ho.value.length == 0) {
+
+                alert("Mời nhập vào họ");
+                return false
+            }
+
+            var ten = document.getElementById('ten')
+            if (ten.value == null || ten.value == '' || ten.value.length == 0) {
+                alert("Mời nhập vào tên");
+                return false
+            }
+
+            var ngay = document.getElementById('ngay')
+            var thang = document.getElementById('thang')
+            var nam = document.getElementById('nam')
+
+            if (ngay.value.length == 0 || ngay.value == null) {
+
+                alert('mời nhập ngày')
+                return false
+            }
+
+            if (thang.value.length == 0 || thang.value == null) {
+
+                alert('mời nhập tháng')
+                return false
+            }
+
+            if (nam.value.length == 0 || nam.value == null) {
+
+                alert('mời nhập năm')
+                return false
+            }
+            var gt = document.getElementsByName('gt');
+            if (!gt[0].checked || gt[1].checked) {
+                alert('Vui lòng chọn giới tính!');
+
+            }
+            var dt = document.getElementById('dt')
+            if (dt.value == null || dt.value == '' || dt.value.length == 0) {
+                alert("Mời nhập vào điện thoại");
+                return false
+            }
+            var st = document.getElementsByName('st').value
+
+            var check = document.getElementsByName('st')
+
+
+            if (check[0].checked || check[1].checked || check[2].checked || check[3].checked) {
+            } else {
+                alert('vui lòng chọn 1 sở thích')
+                return false
+            }
+            return true
+        }
+        function ngaytrongthang() {
+            var thang = parseInt(document.getElementById('thang').value)
+            console.log(thang);
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    var ngay = document.getElementById('ngay').max = "31"
+                    break
+                case 1:
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    var ngay = document.getElementById('ngay').max = "30"
+
+                    break
+                case 2:
+                    var nam = parseInt(document.getElementById('nam').value)
+                    if (nam % 4 == 0 && nam % 100 != 0) {
+                        var ngay = document.getElementById('ngay').max = "29"
+
+                    } else {
+                        var ngay = document.getElementById('ngay').max = "28"
+                    }
+            }
+        }
+    </script>
+</body>
+
+</html>

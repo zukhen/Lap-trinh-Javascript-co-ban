@@ -1,0 +1,38 @@
+﻿.container {
+    width: 300px;
+    height: 350px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0 auto;
+    clear: both;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    font-size: 30pt;
+    font-weight: bold;
+    color: black;
+}
+
+
+.box {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 298px;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    border: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+p{
+    padding: 0px 20px;
+}
+span{
+    font-size: 25px;
+}
